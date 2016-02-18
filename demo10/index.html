@@ -6,7 +6,7 @@
     <script src="../build/browser.min.js"></script>
   </head>
   <body>
-    <script type="text/babel">
+      <script type="text/babel">
       var Hello = React.createClass({
         getInitialState: function () {
           return {
@@ -17,7 +17,7 @@
         componentDidMount: function () {
           this.timer = setInterval(function () {
             var opacity = this.state.opacity;
-            opacity -= .05;
+            opacity -= .02;
             if (opacity < 0.1) {
               opacity = 1.0;
             }
@@ -28,10 +28,13 @@
         },
 
         render: function () {
+          var divStyle={
+          opacity: this.state.opacity
+          };
           return (
-            <div style={{opacity: this.state.opacity}}>
+          <div style={divStyle}>
               Hello {this.props.name}
-            </div>
+          </div>
           );
         }
       });
